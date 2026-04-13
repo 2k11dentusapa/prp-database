@@ -4,52 +4,22 @@
 <meta charset="UTF-8">
 <title>PRP Database</title>
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #fff;
-}
-
-h1 {
-    text-align: center;
-}
-
-#m {
-    display: block;
-    margin: 10px auto 20px auto;
-    padding: 6px;
-    width: 300px;
-    font-size: 14px;
-}
-table {
-    border-collapse: collapse;
-    width: 95%;
-    margin: auto;
-    font-size: 14px;
-}
-th, td {
-    border: 1px solid #999;
-    padding: 6px 8px;
-}
-th {
-    background: #e0e0e0;
-}
-tr:nth-child(even) {
-    background: #f5f5f5;
-}
-.t {
-    font-family: monospace;
-    word-break: break-all;
-}
-.z {
-    font-size: 12px;
-}
+body {font-family: Arial, sans-serif;background: #fff;}
+h1 {text-align: center;}
+#m {display: block;margin: 10px auto 20px auto;padding: 6px;width: 300px;font-size: 14px;}
+table {border-collapse: collapse;width: 95%;margin: auto;font-size: 14px;}
+th, td {border: 1px solid #999;padding: 6px 8px;}
+th {background: #e0e0e0;}
+tr:nth-child(even) {background: #f5f5f5;}
+.t {font-family: monospace;word-break: break-all;}
+.z {font-size: 12px;}
 </style>
 </head>
 <body>
 <h1>PRP database</h1>
 <p>   *All were discovered by 2k11dentusapa</p><br>
 <input type="text" id="m" placeholder="Search number / software / time...">
-<table id="prpTable">
+<table id="p">
     <tr><th>#</th><th>Number</th><th>Create time</th><th>Discovered by</th><th>Digits</th></tr>
     <tr><td>1</td><td class="t">146980277*23150#+1</td><td class="z">2026-04-12 14:56</td><td>OpenPFGW</td><td>10001</td></tr>
     <tr><td>2</td><td class="t">385773971*23150#+1</td><td class="z">2026-04-12 14:59</td><td>OpenPFGW</td><td>10002</td></tr>
@@ -62,16 +32,16 @@ tr:nth-child(even) {
     <tr><td>9</td><td class="t">29758#*10^7205*95+1</td><td class="z">2026-04-12 13:45</td><td>OpenPFGW</td><td>20038</td></tr>
 </table>
 <script>
-const table = document.getElementById("prpTable");
-const rows = Array.from(table.getElementsByTagName("tr")).slice(1);
-const cache = rows.map(row => row.innerText.toLowerCase());
+const b = document.getElementById("p");
+const g = Array.from(b.getElementsByTagName("tr")).slice(1);
+const cache = g.map(a => a.innerText.toLowerCase());
 document.getElementById("searchBox").addEventListener("keyup", function () {
     const filter = this.value.toLowerCase();
-    rows.forEach((row, i) => {
+    g.forEach((a, i) => {
         if (cache[i].includes(filter)) {
-            row.style.display = "";
+            a.style.display = "";
         } else {
-            row.style.display = "none";
+            a.style.display = "none";
         }
     });
 });
