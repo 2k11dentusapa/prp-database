@@ -6,7 +6,6 @@
 <style>
 body {font-family: Arial, sans-serif;background: #fff;}
 h1 {text-align: center;}
-#m {display: block;margin: 10px auto 20px auto;padding: 6px;width: 300px;font-size: 14px;}
 table {border-collapse: collapse;width: 95%;margin: auto;font-size: 14px;}
 th, td {border: 1px solid #999;padding: 6px 8px;}
 th {background: #e0e0e0;}
@@ -18,7 +17,6 @@ tr:nth-child(even) {background: #f5f5f5;}
 <body>
 <h1>PRP database</h1>
 <p>­   *All were discovered by 2k11dentusapa</p><br>
-<input type="text" id="m" placeholder="Search number / software / time...">
 <table id="p">
     <tr><th>#</th><th>Number</th><th>Create time</th><th>Discovered by</th><th>Digits</th></tr>
     <tr><td>1</td><td class="t">146980277*23150#+1</td><td class="z">2026-04-12 14:56</td><td>OpenPFGW</td><td>10001</td></tr>
@@ -31,20 +29,5 @@ tr:nth-child(even) {background: #f5f5f5;}
     <tr><td>8</td><td class="t">1970#*10^9176*423+1</td><td class="z">2026-04-12 21:43</td><td>OpenPFGW</td><td>10002</td></tr>
     <tr><td>9</td><td class="t">29758#*10^7205*95+1</td><td class="z">2026-04-12 13:45</td><td>OpenPFGW</td><td>20038</td></tr>
 </table>
-<script>
-const b = document.getElementById("p");
-const g = Array.from(b.getElementsByTagName("tr")).slice(1);
-const cache = g.map(a => a.innerText.toLowerCase());
-document.getElementById("searchBox").addEventListener("keyup", function () {
-    const filter = this.value.toLowerCase();
-    g.forEach((a, i) => {
-        if (cache[i].includes(filter)) {
-            a.style.display = "";
-        } else {
-            a.style.display = "none";
-        }
-    });
-});
-</script>
 </body>
 </html>
